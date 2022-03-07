@@ -106,7 +106,7 @@ class Trainer:
         if use_cpu:
             os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 
-        configProto = tf.ConfigProto(allow_soft_placement=False, log_device_placement=False)
+        configProto = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)
         configProto.gpu_options.allow_growth = True
         
         self.sess = tf.Session(config=configProto)
